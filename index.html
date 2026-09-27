@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,50 +51,138 @@
   </section>
 
   <!--main content-->
-  <section class="menu" id="menu">
-    <h2 class="section-title">Menu Favorit Kami</h2>
-    <p>Empat pilihan andalan kami</p>
-    <div class="menu-grid">
+  <section class="menu py-5" id="menu">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-2">Menu Favorit Kami</h2>
+      <p class="text-center text-muted mb-4">Empat pilihan andalan kami. (Klik gambar untuk detail)</p>
+      
+      <div class="row g-4 justify-content-center">
 
-      <div class="card">
-        <div class="badge-populer">Terpopuler</div>
-        <img src="images/Kopi Hitam.png" alt="Kopi Hitam">
-        <h3>Kopi Hitam</h3>
-        <p>Kopi robusta lokal yang diseduh tubruk. Pahit pas dan aromanya kuat yang cocok untuk memulai hari.</p>
-        <span class="price">Rp 12.000</span>
-        <!--Fitur Jquery untuk menyukai menu -->
-        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
+        <!-- Menu 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <div class="badge-populer">Terpopuler</div>
+            <img src="images/Kopi Hitam.png" class="card-img-top" alt="Kopi Hitam" data-bs-toggle="modal" data-bs-target="#modalKopiHitam" style="cursor: pointer;">
+            <div class="card-body d-flex flex-column text-center">
+              <h3 class="card-title h5 text-dark fw-bold">Kopi Hitam</h3>
+              <p class="card-text text-muted small flex-grow-1">Kopi robusta lokal yang diseduh tubruk. Pahit pas dan aromanya kuat yang cocok untuk memulai hari.</p>
+              <span class="price fw-bold d-block mb-3">Rp 12.000</span>
+              <!--Fitur Jquery untuk menyukai menu -->
+              <button class="btn-like w-100"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <div class="badge-populer">Terpopuler</div>
+            <img src="images/Kopi Susu Gula Aren.png" class="card-img-top" alt="Kopi Susu Gula Aren" data-bs-toggle="modal" data-bs-target="#modalKopiSusu" style="cursor: pointer;">
+            <div class="card-body d-flex flex-column text-center">
+              <h3 class="card-title h5 text-dark fw-bold">Kopi Susu Gula Aren</h3>
+              <p class="card-text text-muted small flex-grow-1">Espresso, susu segar, dan gula aren asli dalam satu gelas. Manisnya tidak berlebihan.</p>
+              <span class="price fw-bold d-block mb-3">Rp 18.000</span>
+              <button class="btn-like w-100"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <div class="badge-populer">Terpopuler</div>
+            <img src="images/Cappuccino.jpg" class="card-img-top" alt="Cappuccino" data-bs-toggle="modal" data-bs-target="#modalCappuccino" style="cursor: pointer;">
+            <div class="card-body d-flex flex-column text-center">
+              <h3 class="card-title h5 text-dark fw-bold">Cappuccino</h3>
+              <p class="card-text text-muted small flex-grow-1">Espresso dengan susu panas dan lapisan foam tebal. Hangat, creamy, dan seimbang di setiap tegukan.</p>
+              <span class="price fw-bold d-block mb-3">Rp 20.000</span>
+              <button class="btn-like w-100"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <div class="badge-populer">Terpopuler</div>
+            <img src="images/Iced Latte.jpg" class="card-img-top" alt="Latte" data-bs-toggle="modal" data-bs-target="#modalLatte" style="cursor: pointer;">
+            <div class="card-body d-flex flex-column text-center">
+              <h3 class="card-title h5 text-dark fw-bold">Latte</h3>
+              <p class="card-text text-muted small flex-grow-1">Espresso berpadu susu steam yang halus dengan foam tipis. Rasa kopinya ringan dan mudah dinikmati.</p>
+              <span class="price fw-bold d-block mb-3">Rp 20.000</span>
+              <button class="btn-like w-100"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="card">
-        <div class="badge-populer">Terpopuler</div>
-        <img src="images/Kopi Susu Gula Aren.png" alt="Kopi Susu Gula Aren">
-        <h3>Kopi Susu Gula Aren</h3>
-        <p>Espresso, susu segar, dan gula aren asli dalam satu gelas. Manisnya tidak berlebihan.</p>
-        <span class="price">Rp 18.000</span>
-        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
-      </div>
-
-      <div class="card">
-        <div class="badge-populer">Terpopuler</div>
-        <img src="images/Cappuccino.jpg" alt="Cappuccino">
-        <h3>Cappuccino</h3>
-        <p>Espresso dengan susu panas dan lapisan foam tebal. Hangat, creamy, dan seimbang di setiap tegukan.</p>
-        <span class="price">Rp 20.000</span>
-        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
-      </div>
-
-      <div class="card">
-        <div class="badge-populer">Terpopuler</div>
-        <img src="images/Iced Latte.jpg" alt="Latte">
-        <h3>Latte</h3>
-        <p>Espresso berpadu susu steam yang halus dengan foam tipis. Rasa kopinya ringan dan mudah dinikmati.</p>
-        <span class="price">Rp 20.000</span>
-        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
-      </div>
-
     </div>
   </section>
+
+  <!--Detail Menu-->
+  <div class="modal fade" id="modalKopiHitam" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-modal-bg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" style="color: #4b2e2e;">Kopi Hitam</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/Kopi Hitam.png" class="img-fluid rounded mb-3 shadow-sm" alt="Kopi Hitam">
+          <p class="text-muted">Kopi robusta lokal pilihan yang diseduh dengan metode tubruk tradisional. Menghadirkan rasa pahit yang pas dan aroma yang sangat kuat. Pilihan sempurna untuk memberikan energi ekstra di pagi hari.</p>
+          <span class="fs-5 fw-bold" style="color: #a9662a;">Rp 12.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalKopiSusu" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-modal-bg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" style="color: #4b2e2e;">Kopi Susu Gula Aren</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/Kopi Susu Gula Aren.png" class="img-fluid rounded mb-3 shadow-sm" alt="Kopi Susu Gula Aren">
+          <p class="text-muted">Kombinasi sempurna dari double shot espresso, susu segar berkualitas, dan manisnya gula aren murni. Rasa manisnya pas dan tidak menutupi karakter asli dari kopi itu sendiri.</p>
+          <span class="fs-5 fw-bold" style="color: #a9662a;">Rp 18.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalCappuccino" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-modal-bg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" style="color: #4b2e2e;">Cappuccino</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/Cappuccino.jpg" class="img-fluid rounded mb-3 shadow-sm" alt="Cappuccino">
+          <p class="text-muted">Dibuat dari espresso base klasik dengan takaran susu panas yang presisi serta lapisan foam yang tebal di atasnya. Cita rasa yang hangat, creamy, namun rasa kopinya tetap menonjol.</p>
+          <span class="fs-5 fw-bold" style="color: #a9662a;">Rp 20.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalLatte" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-modal-bg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" style="color: #4b2e2e;">Latte</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/Iced Latte.jpg" class="img-fluid rounded mb-3 shadow-sm" alt="Latte">
+          <p class="text-muted">Bagi yang menyukai kopi dengan rasa yang lebih lembut. Latte kami memadukan espresso ringan dengan susu steam dominan dan foam tipis, menghasilkan tekstur velvet yang sangat nikmat.</p>
+          <span class="fs-5 fw-bold" style="color: #a9662a;">Rp 20.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!--tentang kami-->
   <section class="tentang py-5" id="tentang">
@@ -177,56 +265,61 @@
     </div>
   </section>
 
-  <!--kontak & pesan (validasi form menggunakan jQuery, lihat script.js)-->
-  <section class="kontak" id="kontak">
-    <div class="kontak-grid">
-      <div class="kontak-info">
-        <h2>Hubungi &amp; Pesan</h2>
-        <p>Isi formulir berikut, tim kami akan segera menghubungi Anda kembali.</p>
-        <ul class="kontak-detail">
-          <li><strong>Alamat:</strong> Jl. Jeruk, Jakarta Barat</li>
-          <li><strong>WhatsApp:</strong> 0857-7060-7933</li>
-          <li><strong>Jam Buka:</strong> Setiap hari, 08.00 &ndash; 21.00</li>
-        </ul>
+  <!--kontak & pesan-->
+  <section class="kontak py-5" id="kontak">
+    <div class="container">
+      <div class="row g-5 align-items-center justify-content-center" style="max-width: 1000px; margin: 0 auto;">
+        
+        <div class="col-12 col-lg-6 kontak-info">
+          <h2 class="fw-bold mb-3">Hubungi &amp; Pesan</h2>
+          <p class="text-muted">Isi formulir berikut, tim kami akan segera menghubungi Anda kembali.</p>
+          <ul class="kontak-detail p-0">
+            <li><strong>Alamat:</strong> Jl. Jeruk, Jakarta Barat</li>
+            <li><strong>WhatsApp:</strong> 0857-7060-7933</li>
+            <li><strong>Jam Buka:</strong> Setiap hari, 08.00 &ndash; 21.00</li>
+          </ul>
 
-        <!--ini untuk logo whatsapp, instagram, facebook, tiktok, yang diimpor dari link css di atas-->
-        <div class="social-links">
-          <a href="https://wa.me/6285770607933" class="social-btn whatsapp" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="https://www.instagram.com/kopinusantara.kopnus?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" class="social-btn instagram" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.facebook.com/kopinusantaraa/" class="social-btn facebook" target="_blank">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="https://www.tiktok.com/@kedai_kosim?is_from_webapp=1&sender_device=pc" class="social-btn tiktok" target="_blank">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
+          <!--ini untuk logo whatsapp, instagram, facebook, tiktok, yang diimpor dari link css di atas-->
+          <div class="social-links">
+            <a href="https://wa.me/6285770607933" class="social-btn whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/kopinusantara.kopnus?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" class="social-btn instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/kopinusantaraa/" class="social-btn facebook" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@kedai_kosim?is_from_webapp=1&sender_device=pc" class="social-btn tiktok" target="_blank">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
         </div>
+
+        <div class="col-12 col-lg-6">
+          <form class="kontak-form shadow-sm" id="form-kontak" novalidate>
+            <div class="form-group mb-3">
+              <label for="nama">Nama</label>
+              <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama lengkap Anda">
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="nama@email.com">
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group mb-4">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="4" class="form-control" placeholder="Tuliskan pesanan atau pertanyaan Anda"></textarea>
+              <span class="error-msg"></span>
+            </div>
+            <button type="submit" class="btn-kirim" id="btn-kirim">Kirim Pesan</button>
+            <!--pesan sukses, disembunyikan dulu lalu dimunculkan jQuery dengan slideDown-->
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
       </div>
-
-      <!--novalidate: validasi bawaan browser dimatikan, validasi dilakukan oleh jQuery di script.js-->
-      <form class="kontak-form" id="form-kontak" novalidate>
-        <div class="form-group">
-          <label for="nama">Nama</label>
-          <input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda">
-          <span class="error-msg"></span>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="nama@email.com">
-          <span class="error-msg"></span>
-        </div>
-        <div class="form-group">
-          <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesanan atau pertanyaan Anda"></textarea>
-          <span class="error-msg"></span>
-        </div>
-        <button type="submit" class="btn-kirim" id="btn-kirim">Kirim Pesan</button>
-        <!--pesan sukses, disembunyikan dulu lalu dimunculkan jQuery dengan slideDown-->
-        <div class="form-status" id="form-status"></div>
-      </form>
     </div>
   </section>
 
@@ -237,7 +330,7 @@
   </footer>
 
   <!--wadah toast notifikasi, isinya ditambahkan jQuery lewat fungsi tampilkanToast()-->
-  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <div class="toast-container-custom" id="toast-container" aria-live="polite"></div>
 
   <!--tombol kembali ke atas, muncul lewat jQuery setelah halaman di-scroll-->
   <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
