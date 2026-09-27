@@ -9,8 +9,8 @@ $(document).ready(function() {
         $('.hero-content').children().each(function(index) {
             $(this)
                 .css({ opacity: 0, position: 'relative', top: '20px' }) // mulai transparan & agak turun
-                .delay(index * 250)                                      // tiap elemen jeda 250ms
-                .animate({ opacity: 1, top: 0 }, 700);                   // lalu naik & muncul
+                .delay(index * 250)                                    // tiap elemen jeda 250ms
+                .animate({ opacity: 1, top: 0 }, 700);                 // lalu naik & muncul
         });
     }
 
