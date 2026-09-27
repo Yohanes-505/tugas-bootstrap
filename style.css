@@ -263,17 +263,6 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
 /*==tentang==*/
 .tentang {
   background-color: #f5e6d3;
-  padding: 2rem 1rem;
-}
-
-.tentang-flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 100%;
 }
 
 .tentang-flex img {
@@ -281,9 +270,6 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
   max-width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 1.5rem auto;
-  flex-shrink: 0;
 }
 
 .tentang-flex {
@@ -292,13 +278,27 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.tentang-flex.tampil{
+.tentang-flex.tampil {
   opacity: 1;
   transform: translateY(0);
 }
 
 .tentang-text p {
   font-size: 0.95rem;
+}
+
+@media (min-width: 576px) {
+  .tentang-flex img {
+    width: 180px;
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 992px) {
+  .tentang-flex {
+    max-width: 54%;
+    margin: 0 auto;
+  }
 }
 
 .card,
