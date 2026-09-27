@@ -1,8 +1,8 @@
-# Kopi Nusantara — Interaktivitas dengan jQuery
+# Kopi Nusantara — Layout & Components dengan Bootstrap
 
-Tugas Studi Kasus jQuery (Pertemuan 5) — Front-End Programming (TK23023).
+Tugas Studi Kasus Bootstrap (Pertemuan 6-7) — Front-End Programming (TK23023).
 
-Lanjutan dari Tugas Responsive UI (Pertemuan 4). Halaman company profile kedai kopi "Kopi Nusantara" kini dilengkapi interaksi dinamis menggunakan jQuery, tanpa framework CSS.
+Lanjutan dari Tugas Responsive UI (Pertemuan 4) dan Interaktivitas jQuery (Pertemuan 5). Halaman company profile kedai kopi "Kopi Nusantara" kini dibangun ulang (refactor) menggunakan Bootstrap 5 untuk sistem grid dan komponen UI, tanpa mengubah konten maupun identitas visual yang sudah ada. Kode jQuery dari Pertemuan 5 tetap dipertahankan untuk fitur yang belum digantikan Bootstrap.
 
 ## Anggota Kelompok
 
@@ -13,32 +13,48 @@ Lanjutan dari Tugas Responsive UI (Pertemuan 4). Halaman company profile kedai k
 | Elfrandt Goldjer | 535250092 |
 | Nicho Louis Salim | 535250095 |
 
-## Fitur Interaktif
+## Komponen Bootstrap yang Digunakan
 
-1. **Accordion FAQ** — 4 pertanyaan; jawaban muncul dan tertutup dengan `slideToggle()`, dan hanya satu jawaban yang terbuka dalam satu waktu.
-2. **Tombol suka** — penghitung pada tiap kartu menu; klik pertama menambah, klik kedua membatalkan.
-3. **Tombol kembali ke atas** — muncul dengan `fadeIn()` setelah halaman di-scroll, lalu menggulung halaman dengan `animate({ scrollTop: 0 })`.
-4. **Validasi formulir kontak** — memeriksa nama, email, dan pesan; menampilkan pesan error per kolom serta notifikasi sukses dengan `slideDown()`.
-5. **Animasi masuk hero** — judul, paragraf, dan tombol muncul bergantian saat halaman dibuka.
-6. **Menu mobile** — menu hamburger menutup otomatis setelah salah satu tautan diklik.
+1. **Navbar responsif** (`navbar-expand-sm`) — menu horizontal di layar lebar, otomatis menjadi hamburger (`navbar-toggler`) di mobile, dengan `collapse` yang ditutup otomatis lewat `bootstrap.Collapse` saat tautan diklik.
+2. **Grid system** (`.container`, `.row`, `.col-*`) — tata letak menu memakai `col-12 col-md-6 col-lg-3` (3 breakpoint: mobile 1 kolom, tablet 2 kolom, desktop 4 kolom).
+3. **Card** — setiap menu ditampilkan dengan `card`, `card-img-top`, `card-body`, `card-title`, `card-text`.
+4. **Modal** — menampilkan detail tiap menu (deskripsi lengkap & harga) saat gambar pada card diklik.
+5. **Accordion** — bagian FAQ, menggantikan accordion manual jQuery dari Pertemuan 5.
+6. **Utility class** — `d-flex`, `flex-column`/`flex-md-row`, `text-center`, `rounded-circle`, `shadow-sm`, `py-*`, `gap-*`, `fw-bold`, dan lainnya, dipakai di berbagai bagian untuk mengurangi kebutuhan CSS kustom.
 
-## Metode jQuery yang Digunakan
+## Fitur Interaktif jQuery yang Tetap Dipertahankan
 
-- **Selector & event handling** — `$('.faq-question').click()`, `$('#form-kontak').submit()`, `$(window).scroll()`
-- **Manipulasi DOM & class** — `toggleClass()`, `addClass()`, `removeClass()`, `.text()`, `.prop()`, `.next()`, `.not()`
-- **Efek & animasi** — `slideToggle()`, `slideUp()`, `slideDown()`, `fadeIn()`, `fadeOut()`, `animate()`, `delay()`
+1. **Tombol suka** — penghitung pada tiap kartu menu; klik pertama menambah, klik kedua membatalkan; card dengan like terbanyak otomatis dapat badge "Terpopuler".
+2. **Tombol kembali ke atas** — muncul dengan `fadeIn()` setelah halaman di-scroll, lalu menggulung halaman dengan `animate({ scrollTop: 0 })`.
+3. **Validasi formulir kontak** — memeriksa nama, email, dan pesan; menampilkan pesan error per kolom serta notifikasi sukses dengan `slideDown()`.
+4. **Animasi masuk hero** — judul, paragraf, dan tombol muncul bergantian saat halaman dibuka.
+5. **Toast notification** — notifikasi kecil di pojok kiri bawah saat menu disukai/dibatalkan (wadah diberi class `toast-container-custom` agar tidak bentrok dengan komponen Toast bawaan Bootstrap).
+6. **Status buka/tutup** — badge otomatis menyesuaikan teks & warna berdasarkan jam saat ini (WIB).
+7. **Animasi reveal saat scroll** — elemen `.card`, `.faq-item`, dan `.tentang-flex` muncul bertahap memakai `IntersectionObserver`.
+
+## Metode & Fungsi yang Digunakan
+
+- **jQuery** — selector & event handling (`.click()`, `.submit()`, `.scroll()`), manipulasi DOM & class (`toggleClass()`, `addClass()`, `removeClass()`, `.text()`), efek & animasi (`slideDown()`, `slideUp()`, `fadeIn()`, `fadeOut()`, `animate()`, `delay()`)
+- **Bootstrap JS (bundle)** — `data-bs-toggle="collapse"`, `data-bs-toggle="modal"`, `bootstrap.Collapse.getOrCreateInstance()`
 
 ## Struktur Berkas
 
 ```
-index.html    — struktur halaman
-style.css     — styling dan media query (mobile-first, 3 breakpoint)
-script.js     — seluruh kode jQuery
+index.html    — struktur halaman (navbar, grid, card, modal, accordion Bootstrap)
+style.css     — kustomisasi warna/tipografi Bootstrap + CSS manual yang belum tergantikan
+script.js     — kode jQuery yang tersisa + integrasi kecil dengan Bootstrap JS
 images/       — foto produk dan logo
 ```
 
-jQuery dimuat melalui CDN resmi (https://code.jquery.com) pada bagian bawah `<body>`, sebelum `script.js`.
+## Urutan Pemuatan Script
+
+Wajib berurutan sebelum `</body>`:
+```html
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+```
 
 ## Cara Menjalankan
 
-Unduh atau clone repositori ini, lalu buka `index.html` di browser. Diperlukan koneksi internet agar jQuery dan ikon Font Awesome dapat dimuat.
+Unduh atau clone repositori ini, lalu buka `index.html` di browser. Diperlukan koneksi internet agar Bootstrap, jQuery, dan ikon Font Awesome dapat dimuat dari CDN.
