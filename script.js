@@ -15,11 +15,13 @@ $(document).ready(function() {
     }
 
     // 2. MENU MOBILE
-    // Setelah link di navbar diklik, menu hamburger ditutup kembali
-    const $navToggle = $('#nav-toggle');
+    // Setelah link navbar diklik, collapse Bootstrap ditutup lagi (kalau lagi kebuka di mobile)
+    const navbarCollapseEl = document.getElementById('navbarKopnus');
 
-    $('.nav-list a').click(function() {
-        $navToggle.prop('checked', false);
+    $('.nav-link').on('click', function() {
+        if (navbarCollapseEl.classList.contains('show')) {
+            bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl).hide();
+        }
     });
 
     // 3. TOMBOL SUKA + PENANDA MENU TERPOPULER
