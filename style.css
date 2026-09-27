@@ -26,113 +26,66 @@ img {
 /*===mobile===*/
 
 /*==header==*/
-.header {                                                                                                                                                            
-  position: sticky;                                                                                                                                                  
-  top: 0;                                                                                                                                                            
-  z-index: 100;                                                                                                                                                      
-  background-color: rgba(75, 46, 46, 0.95);                                                                          
-  backdrop-filter: blur(5px);                                                                                    
-  -webkit-backdrop-filter: blur(5px);                                                                                    
-  padding: 1rem;                                                                                                                                                     
-}   
-
-.nav-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(75, 46, 46, 0.95);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
 }
 
-.logo {
+.navbar-brand.logo {
   color: #fff;
   font-size: 1.4rem;
 }
 
-.nav-toggle {
-  display: none;
+.navbar-toggler {
+  border-color: rgba(245, 230, 211, 0.5);
 }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 26px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 20;
-  flex-shrink: 0;
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 160, 102, 0.5);
 }
 
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #f5e6d3;
-  border-radius: 2px;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+/* ganti warna ikon garis 3 biar matching tema (bawaan bootstrap agak pucat) */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28245, 230, 211, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ketika toogle hamburger diklik maka akan muncul navbarnya (khusus untuk mobile) */
-.nav-toggle:checked ~ .hamburger span:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg);
-}
-
-.nav-toggle:checked ~ .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle:checked ~ .hamburger span:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg);
-}
-
-.navbar {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
+.navbar-collapse {
   background-color: #4b2e2e;
-  transition: max-height 0.3s ease;
 }
 
-.nav-toggle:checked ~ .navbar {
-  max-height: 300px;
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    margin-top: 0.75rem;
+    border-radius: 6px;
+    padding: 0.5rem 0;
+  }
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 0.4rem;
-  padding: 1rem 0;
-}
-
-.nav-list a {
-  display: inline-block;
+.nav-link {
   color: #f5e6d3;
-  text-decoration: none;
   font-size: 0.95rem;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease;
-  outline: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-list a:hover {
+.nav-link:hover,
+.nav-link:focus {
   color: #d9a066;
   border-bottom-color: #d9a066;
 }
 
-/*ketika navbar telah diklik maka muncul garis border bawah */
-body:has(#hero:target) .nav-list a[href="#hero"],
-body:has(#menu:target) .nav-list a[href="#menu"],
-body:has(#tentang:target) .nav-list a[href="#tentang"],
-body:has(#faq:target) .nav-list a[href="#faq"],
-body:has(#kontak:target) .nav-list a[href="#kontak"] {
+/* underline nyala kalau section-nya lagi aktif (via :target) */
+body:has(#hero:target) .nav-link[href="#hero"],
+body:has(#menu:target) .nav-link[href="#menu"],
+body:has(#tentang:target) .nav-link[href="#tentang"],
+body:has(#faq:target) .nav-link[href="#faq"],
+body:has(#kontak:target) .nav-link[href="#kontak"] {
   color: #d9a066;
   border-bottom-color: #d9a066;
 }
@@ -508,24 +461,6 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
 /*===tablet===*/
 @media (min-width: 576px) {
 
-  .hamburger {
-    display: none;
-  }
-
-  .navbar {
-    position: static;
-    max-height: none;
-    overflow: visible;
-    background-color: transparent;
-    width: auto;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    gap: 1.2rem;
-    padding: 0;
-  }
-
   .hero h2 {
     font-size: 2rem;
   }
@@ -567,7 +502,7 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
   }
 
   .header {
-    padding: 1.2rem 3rem;
+    padding: 0.7rem 3rem;
   }
 
   .logo {
