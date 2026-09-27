@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kopi Nusantara - Kedai Kopi Rumahan</title>
+
+  <!--Bootstrap 5 CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
   <!--mengimport css yang berada di luar file lokal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -106,52 +110,68 @@
   </section>
 
   <!--faq-->
-  <section class="faq" id="faq">
-    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
-    <div class="faq-list">
+  <section class="faq py-5" id="faq">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-4">Pertanyaan yang Sering Diajukan</h2>
 
-      <!--faq 1-->
-      <div class="faq-item">
-        <div class="faq-question">
-          Apakah Kopi Nusantara buka setiap hari?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Ya, kami buka setiap hari mulai pukul 08.00 sampai 21.00 WIB.</p>
-        </div>
-      </div>
+      <div class="accordion" id="faqAccordion">
 
-      <!--faq 2-->
-      <div class="faq-item">
-        <div class="faq-question">
-          Apakah bisa pesan lewat online?
-          <span class="faq-icon">+</span>
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+              Apakah Kopi Nusantara buka setiap hari?
+            </button>
+          </h3>
+          <div id="faqCollapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Ya, kami buka setiap hari mulai pukul 08.00 sampai 21.00 WIB.
+            </div>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Bisa, kamu bisa hubungi kami lewat Instagram atau WhatsApp yang tertera di bagian Kontak.</p>
-        </div>
-      </div>
 
-      <!--faq 3-->
-      <div class="faq-item">
-        <div class="faq-question">
-          Apakah tersedia menu tanpa gula?
-          <span class="faq-icon">+</span>
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+              Apakah bisa pesan lewat online?
+            </button>
+          </h3>
+          <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Bisa, kamu bisa hubungi kami lewat Instagram atau WhatsApp yang tertera di bagian Kontak.
+            </div>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Tersedia, kamu bisa request level gula sesuai selera saat memesan.</p>
-        </div>
-      </div>
 
-      <!--faq 4-->
-      <div class="faq-item">
-        <div class="faq-question">
-          Apakah ada fasilitas WiFi dan stopkontak?
-          <span class="faq-icon">+</span>
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+              Apakah tersedia menu tanpa gula?
+            </button>
+          </h3>
+          <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Tersedia, kamu bisa request level gula sesuai selera saat memesan.
+            </div>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Kami menyediakan WiFi gratis yang cepat dan banyak stopkontak, cocok untuk mengerjakan tugas atau work from cafe.</p>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+              Apakah ada fasilitas WiFi dan stopkontak?
+            </button>
+          </h3>
+          <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Kami menyediakan WiFi gratis yang cepat dan banyak stopkontak, cocok untuk mengerjakan tugas atau work from cafe.
+            </div>
+          </div>
         </div>
+
       </div>
 
     </div>

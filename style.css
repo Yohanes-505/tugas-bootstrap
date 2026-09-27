@@ -316,56 +316,28 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
 
 /*==faq==*/
 .faq {
-  padding: 2rem 1rem;
   background-color: #fdf6ee;
 }
 
-.faq-list {
-  max-width: 700px;
-  margin: 0 auto;
+.accordion {
+  --bs-accordion-color: #4b2e2e;
+  --bs-accordion-btn-color: #4b2e2e;
+  --bs-accordion-active-color: #4b2e2e;
+  --bs-accordion-active-bg: #f5e6d3;
+  --bs-accordion-border-color: #eee0cd;
+  --bs-accordion-btn-focus-border-color: #d9a066;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(217, 160, 102, 0.35);
 }
 
-.faq-item {
-  background: #fff;
+.accordion-item {
   border-radius: 8px;
-  margin-bottom: 0.8rem;
   overflow: hidden;
+  margin-bottom: 0.8rem;
+  border: none;
 }
 
-.faq-question {
-  cursor: pointer;
-  font-weight: bold;
-  color: #4b2e2e;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-/* kelas active ditambahkan jQuery saat pertanyaan diklik */
-.faq-question.active {
-  background-color: #f5e6d3;
-}
-
-.faq-icon {
-  transition: transform 0.3s ease;
-  font-size: 1.2rem;
-}
-
-.faq-question.active .faq-icon {
-  transform: rotate(45deg); 
-}
-
-.faq-answer {
-  display: none; 
-  padding: 0 1rem;
-}
-
-.faq-answer p {
-  font-size: 0.9rem;
-  color: #555;
-  padding-bottom: 1rem;
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
 }
 
 .btn-like {

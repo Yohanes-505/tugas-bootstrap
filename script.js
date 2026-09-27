@@ -22,24 +22,7 @@ $(document).ready(function() {
         $navToggle.prop('checked', false);
     });
 
-    // 3. ACCORDION FAQ
-    // Jawaban muncul/tertutup saat pertanyaan diklik,
-    // dan hanya satu jawaban yang terbuka dalam satu waktu
-    const $pertanyaan = $('.faq-question');
-    const $jawaban    = $('.faq-answer');
-
-    $pertanyaan.click(function() {
-        const $diklik     = $(this);
-        const $jawabanIni = $diklik.next('.faq-answer');
-
-        $jawaban.not($jawabanIni).slideUp(300);
-        $pertanyaan.not($diklik).removeClass('active');
-
-        $jawabanIni.slideToggle(300);
-        $diklik.toggleClass('active');
-    });
-
-    // 4. TOMBOL SUKA + PENANDA MENU TERPOPULER
+    // 3. TOMBOL SUKA + PENANDA MENU TERPOPULER
     // Klik pertama menambah 1, klik kedua membatalkan (mengurangi 1)
     // Card dengan like terbanyak otomatis dapat badge "Terpopuler"
     $('.btn-like').click(function() {
@@ -91,7 +74,7 @@ $(document).ready(function() {
         }
     }
 
-    // 5. TOMBOL KEMBALI KE ATAS
+    // 4. TOMBOL KEMBALI KE ATAS
     // Muncul setelah halaman di-scroll, klik untuk kembali ke atas
     const $tombolAtas = $('#back-to-top');
 
@@ -112,7 +95,7 @@ $(document).ready(function() {
         });
     });
 
-    // 6. VALIDASI FORM KONTAK
+    // 5. VALIDASI FORM KONTAK
     const $form       = $('#form-kontak');
     const $nama       = $('#nama');
     const $email      = $('#email');
@@ -190,7 +173,7 @@ $(document).ready(function() {
 
 });
 
-// 7. ANIMASI REVEAL SAAT SCROLL
+// 6. ANIMASI REVEAL SAAT SCROLL
 // dipasang di luar $(document).ready karena pakai IntersectionObserver,
 // bukan event jQuery tapi tetap aman karena DOM sudah siap saat script ini jalan
 
@@ -216,7 +199,7 @@ function pasangAnimasi(selector, jedaAntarElemen) {
     });
 }
 
-// 8. TOAST NOTIFICATION
+// 7. TOAST NOTIFICATION
 // popup kecil di pojok kiri bawah. muncul lalu ilang sendiri
 const $toastWadah = $('#toast-container');
 
@@ -239,7 +222,7 @@ function tampilkanToast(pesan, tipe) {
             });
 }
 
-// 9. STATUS BUKA DAN TUTUP
+// 8. STATUS BUKA DAN TUTUP
 // cek jam sekarang dan jadiin status buka ato tutup
 const $statusBuka = $('#status-buka');
 const JAM_BUKA    = 8;
