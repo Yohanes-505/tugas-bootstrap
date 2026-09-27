@@ -14,29 +14,29 @@
 </head>
 
 <body>
-  <!--header-->
+  <!--header & navbar (Bootstrap navbar component)-->
   <header class="header">
-    <div class="nav-container">
-      <h1 class="logo">Kopi Nusantara</h1>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand logo" href="#hero">Kopi Nusantara</a>
 
-      <!--Ini kalau tampilan mobile bakal muncul tombol garis 3-->
-      <label for="nav-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarKopnus" aria-controls="navbarKopnus"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <nav class="navbar">
-        <ul class="nav-list">
-          <li><a href="#hero">Beranda</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarKopnus">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!--hero-->
@@ -244,8 +244,9 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!--jQuery dari CDN resmi, wajib dimuat sebelum script.js agar $ sudah tersedia-->
+  <!--jQuery dulu, lalu Bootstrap bundle (isinya Popper + JS komponen navbar/accordion), baru script.js-->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 
 </body>
